@@ -1,3 +1,5 @@
+import os
+
 import google.generativeai as genai
 import json
 import logging
@@ -118,23 +120,23 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
 
     # This part requires a real API key to run.
-    # test_api_key = "YOUR_GEMINI_API_KEY"
-    # if test_api_key == "YOUR_GEMINI_API_KEY":
-    #     logger.warning("Please replace YOUR_GEMINI_API_KEY with an actual API key to test.")
-    # else:
-    #     sample_post_valid = "Wygraj super nagrody! Zadanie: polub post. Zgłoszenia w komentarzu. Czas do 20.03.2025."
-    #     analysis_valid = analyze_post(sample_post_valid, test_api_key)
-    #     logger.info(f"Analysis (Valid Post): {analysis_valid}")
+    test_api_key = os.getenv('GEMINI_API_KEY')
+    if test_api_key == "YOUR_GEMINI_API_KEY":
+        logger.warning("Please replace YOUR_GEMINI_API_KEY with an actual API key to test.")
+    else:
+        sample_post_valid = "Wygraj super nagrody! Zadanie: polub post. Zgłoszenia w komentarzu. Czas do 20.03.2025."
+        analysis_valid = analyze_post(sample_post_valid, test_api_key)
+        logger.info(f"Analysis (Valid Post): {analysis_valid}")
 
-    #     sample_post_missing_info = "Konkurs! Do wygrania książka. Zadanie: odpowiedz na pytanie."
-    #     analysis_missing = analyze_post(sample_post_missing_info, test_api_key)
-    #     logger.info(f"Analysis (Missing Info): {analysis_missing}")
+        sample_post_missing_info = "Konkurs! Do wygrania książka. Zadanie: odpowiedz na pytanie."
+        analysis_missing = analyze_post(sample_post_missing_info, test_api_key)
+        logger.info(f"Analysis (Missing Info): {analysis_missing}")
 
-    #     analysis_empty = analyze_post("", test_api_key)
-    #     logger.info(f"Analysis (Empty Post): {analysis_empty}")
+        analysis_empty = analyze_post("", test_api_key)
+        logger.info(f"Analysis (Empty Post): {analysis_empty}")
 
-    #     analysis_no_key = analyze_post("Test post", "")
-    #     logger.info(f"Analysis (No API Key): {analysis_no_key}")
+        analysis_no_key = analyze_post("Test post", "")
+        logger.info(f"Analysis (No API Key): {analysis_no_key}")
 
     pass # Keep the example usage commented out or conditional
 
