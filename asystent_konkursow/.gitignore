@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets
+.env
+secrets.toml
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Data files (if they are not meant to be versioned)
+# data/konkursy_wyniki.xlsx
+
+# OS specific files
+.DS_Store
+Thumbs.db
